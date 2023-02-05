@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+
+{% block title %} {% endblock %}
+
+{% block body %}
+    {% if posts %}
+        {% for post in posts %}
+        <article class="media content-section">
+        <img src="{{ post.author.profile.image.url }}" class="rounded-circle mr-4" style="height: 100px; width:100px;">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a href="{% url 'user_posts' post.author.username %}" class="mr-2">{{ post.author }}</a>
+                <small class="text-danger">{{ post.date_posted }}</small>
+            </div>
+            <a href="{% url 'post_detail' post.id %}" class="article-title">{{ post.title }}</a>
+            <p class="article-content">{{ post.content   }}</p>
+        </div>
+        </article>
+        {% endfor %}
+
+               {% include 'blog/pagination.html' %}
+
+    {% else %}
+        <h2>No Articles available </h2>
+
+    {% endif %}
+
+{% endblock %}

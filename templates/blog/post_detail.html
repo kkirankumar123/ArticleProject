@@ -1,0 +1,32 @@
+
+{% extends 'blog/base.html' %}
+
+{% block title %} Post Detail {% endblock %}
+
+{% block body %}
+   {% if object %}
+          <article class="media content-section">
+
+             <img src="{{ object.author.profile.image.url }}" class="rounded-circle mr-4"
+                  style="height: 100px;width: 100px;">
+
+
+             <div class="media-body">
+                 <div class="article-metadata">
+                     <a href="#" class="mr-2">{{ object.author }}</a>
+                     <small class="text-danger">{{ object.date_posted }}</small>
+                 </div>
+                 <a href="#" class="article-title">{{ object.title }}</a>
+                 <p class="article-content">{{ object.content }}</p>
+
+                 <div>
+                     <a href="{% url 'post_update' object.id %}" class="btn btn-success btn-sm mt-1 mb-1">Update</a>
+                     <a href="{%  url 'post_delete' object.id %}" class="btn btn-danger btn-sm mt-1 mb-1">Delete</a>
+                 </div>
+             </div>
+          </article>
+
+   {% else %}
+      <h2>Requested Post not available</h2>
+   {% endif %}
+{% endblock %}

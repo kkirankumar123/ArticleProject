@@ -1,0 +1,36 @@
+
+{% extends 'blog/base.html' %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block body %}
+   {% if posts %}
+       <h1 class="mb-3">Posts by {{ view.kwargs.username }}
+           ({{ page_obj.paginator.count }})</h1>
+
+      {% for post in posts %}
+
+          <article class="media content-section">
+
+             <img src="{{ post.author.profile.image.url }}" class="rounded-circle mr-4"
+                  style="height: 100px;width: 100px;">
+
+
+             <div class="media-body">
+                 <div class="article-metadata">
+                     <a href="#" class="mr-2">{{ post.author }}</a>
+                     <small class="text-danger">{{ post.date_posted|date:'d - M - Y, h:i' }}</small>
+                 </div>
+                 <a href="{% url 'post_detail' post.id %}" class="article-title">{{ post.title }}</a>
+                 <p class="article-content">{{ post.content }}</p>
+             </div>
+          </article>
+
+      {% endfor %}
+
+           {% include 'blog/pagination.html' %}
+
+   {% else %}
+      <h2>Posts are not available</h2>
+   {% endif %}
+{% endblock %}

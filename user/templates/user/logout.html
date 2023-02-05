@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Login Page {% endblock %}
+
+{% block body %}
+  <div class="content-section" style="margin-bottom: 100px">
+
+  <h1>Thanks for spending time with our website . Visit Again </h1>
+  <h6>Do you want to login again ?<a href="{% url 'login' %}" class="btn btn-sm btn-primary">Login</a></h6>
+  </div>
+{% endblock %}

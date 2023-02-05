@@ -1,0 +1,40 @@
+
+{% extends 'blog/base.html' %}
+
+{% block title %} Reponsive Page {% endblock %}
+
+{% block body %}
+   <h1 class="text-center bg-info text-white">Welcome to Python Family</h1>
+   <div class="container">
+      <div class="row">
+          <div class="col-md-6">
+             <h2 class="myh2">About Python</h2>
+             <div class="myclass">
+                <p>1. Python is Simple language.</p>
+                <p>2. Python is Easy language.</p>
+                <p>3. Python is Dynamic language.</p>
+             </div>
+          </div> <!--  column 1 div -->
+
+          <div class="col-md-6">
+             <h2 class="myh2">About Django</h2>
+             <div class="myclass">
+                <p>1. Django is a Python Web Framework.</p>
+                <p>2. Django is a Portable Framework.</p>
+                <p>3. Django is providing more modules.</p>
+             </div>
+          </div> <!--  column 2 div -->
+      </div> <!--  row div -->
+
+      <div class="row">
+          <div class="col-md-12">
+              <h2 class="myh2">About RESTAPI</h2>
+             <div class="myclass">
+                <p>1. RESTAPI is used to make communication between app to app.</p>
+                <p>2. RESTAPI is an extension of Django Framework.</p>
+                <p>3. RESTAPI reducing lots of burden on Developers.</p>
+             </div>
+          </div>
+      </div>
+   </div> <!--  container div -->
+{% endblock %}

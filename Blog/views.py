@@ -8,6 +8,7 @@ from django.contrib.auth.mixins import (LoginRequiredMixin,UserPassesTestMixin)\
 from django.core.exceptions import PermissionDenied
 
 from django.contrib.auth.views import redirect_to_login
+from django.http import HttpResponse
 
 
 # Create your views here.
@@ -123,6 +124,17 @@ class UserPostListView(ListView):
 
 def responsive_view(request):
     return render(request,'blog/responsive.html')
+
+def djangoview(request):
+    if request.method == 'GET':
+        return render(request,'Blog/djangoques.html')
+
+
+def pythonview(request):
+    if request.method == 'GET':
+        return render(request,'Blog/pythonques.html')
+
+
 
 
 

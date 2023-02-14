@@ -1,0 +1,72 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}About  {% endblock %}
+
+{% block body %}
+
+    <article class="media content-section">
+        <div class="media-body">
+            <h3>1. What is Django ORM?</h3>
+            <p>
+                This ORM (an acronym for Object Relational Mapper) enables us to interact with databases in a more pythonic way like we can avoid writing raw queries, it is possible to retrieve, save, delete and perform other operations over the database without ever writing any SQL query.
+                It works as an abstraction layer between the models and the database.</p>
+            <h3>
+                2. Define static files and explain their uses?
+            </h3>
+
+            <p>
+                Websites generally need to serve additional files such as images. Javascript or CSS.
+                In Django, these files are referred to as “static files”, Apart from that Django provides
+            </p>
+
+            <h3>
+                3. What are models in Django?
+            </h3>
+
+            <p>
+               A model in Django refers to a class that maps to a database table or database
+collection. Each attribute of the Django model class represents a database field. They
+are defined in app/models.p
+            </p>
+
+             <h3>
+                4. What are templates in Django or Django template language?
+            </h3>
+
+            <p>
+               Templates are an integral part of the Django MVT architecture. They generally
+comprise HTML, CSS, and js in which dynamic variables and information are
+embedded with the help of views. Some constructs are recognized and interpreted
+by the template engine. The main ones are variables and tags.
+A template is rendered with a context. Rendering just replaces variables with their
+values, present in the context, and processes tags. Everything else remains as it is.
+The syntax of the Django template language includes the following four constructs :
+                <ul>
+            <li>Variables</li>
+            <li>Tags</li>
+            <li>Filters</li>
+            <li>Comments</li>
+        </ul>
+            </p>
+
+            <h3>
+                5. What are views in Django?
+            </h3>
+
+            <p>
+                A view function, or “view” for short, is simply a Python function that takes a web
+request and returns a web response. This response can be HTML contents of a web
+page, or a redirect, or a 404 error, or an XML document, or an image, etc.
+                <br>
+                There are two types of views:
+                <ul>
+            <li>Function-Based Views: In this, we import our view as a function.</li>
+            <li>Class-based Views: It’s an object-oriented approach.</li>
+        </ul>
+
+            </p>
+        </div>
+    </article>
+
+
+{% endblock %}

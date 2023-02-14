@@ -17,6 +17,8 @@ urlpatterns=[
     path('user/<str:username>/', views.UserPostListView.as_view(),
          name='user_posts'),
     path('responsive/', views.responsive_view, name='responsive'),
+    path('django/',views.djangoview,name='djangoo'),
+    path('python/',views.pythonview,name='python'),
 
     # path('', views.home_view, name='blog_home'),
     path("about/", views.about, name='about'),

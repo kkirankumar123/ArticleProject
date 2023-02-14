@@ -28,4 +28,5 @@ urlpatterns = [
     path('logout/',auth_views.LogoutView.as_view(template_name='user/logout.html'),name='logout'),
     path('profile/',user_views.profile,name='profile'),
     path('', include('Blog.urls')),
+
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
